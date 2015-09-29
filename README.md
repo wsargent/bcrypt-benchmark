@@ -36,7 +36,7 @@ When a user logs in successfully:
 * Check the user's password hash vs the configured work factor.  
 * If the configured work factor is higher than password hash, then rehash.
 
-How do you figure out what the hash's work factor is?  It's part of the string: all BCrypt hashes start with "$<version>$<work factor>", so "$2a$10" means a work factor of 10.
+How do you figure out what the hash's work factor is?  It's part of the string: all BCrypt hashes start with "$version$work_factor", so "$2a$10" means a work factor of 10.
 
 Once you have these two pieces, then you can bounce servers with the new configuration, and passwords will be seamlessly upgraded.  If you want to ensure everyone is using a minimum work factor, then look for weak password hashes, expire their credentials, and notify the users that they must reset their passwords.
 
